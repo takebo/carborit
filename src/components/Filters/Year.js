@@ -7,21 +7,29 @@ export default class Year extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      years: [],
-    };
+    this.state = { years: [], isLoading: true };
   }
 
   fetchYears = async () => {
+    this.setState({ years: [], isLoading: true });
     if (this.props.filters.model) {
-      const response = await fipe.get(
-        '/carros/marcas/' +
-          this.props.filters.brand +
-          '/modelos/' +
-          this.props.filters.model +
-          '/anos'
-      );
-      this.setState({ years: response.data });
+      await fipe
+        .get(
+          '/carros/marcas/' +
+            this.props.filters.brand +
+            '/modelos/' +
+            this.props.filters.model +
+            '/anos'
+        )
+        .then(response => {
+          this.setState({ years: response.data, isLoading: false });
+        })
+        .catch(err => {
+          console.error('Fetching Years: ', err);
+          this.setState({ years: [], isLoading: true });
+        });
+    } else {
+      this.setState({ years: [], isLoading: true });
     }
   };
 
@@ -45,6 +53,7 @@ export default class Year extends React.Component {
     if (this.props.filters.model !== prevProps.filters.model) {
       this.fetchYears();
     }
+    console.log('Year.js did update. isLoading = ', this.state.isLoading);
   }
 
   render() {
@@ -53,13 +62,13 @@ export default class Year extends React.Component {
         id="year"
         label=""
         onChangeFunc={this.setYear}
-        disabled={
-          !!!this.props.filters.model ||
-          !(Array.isArray(this.state.years) && this.state.years.length)
-        }
+        disabled={this.state.isLoading}
       >
-        <option value="">Year</option>
-        {this.props.filters.model ? this.listYears(this.state.years) : null}
+        {this.state.isLoading ? (
+          <option value="">Year</option>
+        ) : (
+          this.listYears(this.state.years)
+        )}
       </Combobox>
     );
   }

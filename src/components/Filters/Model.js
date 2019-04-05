@@ -7,17 +7,23 @@ export default class Model extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      models: [],
-    };
+    this.state = { models: [], isLoading: true };
   }
 
   fetchModels = async () => {
+    this.setState({ models: [], isLoading: true });
     if (this.props.filters.brand) {
-      const response = await fipe.get(
-        '/carros/marcas/' + this.props.filters.brand + '/modelos'
-      );
-      this.setState({ models: response.data.modelos });
+      await fipe
+        .get('/carros/marcas/' + this.props.filters.brand + '/modelos')
+        .then(response =>
+          this.setState({ models: response.data.modelos, isLoading: false })
+        )
+        .catch(err => {
+          console.error('Fetching Models: ', err);
+          this.setState({ models: [], isLoading: true });
+        });
+    } else {
+      this.setState({ models: [], isLoading: true });
     }
   };
 
@@ -49,13 +55,13 @@ export default class Model extends React.Component {
         id="model"
         label=""
         onChangeFunc={this.setModel}
-        disabled={
-          !!!this.props.filters.brand ||
-          !(Array.isArray(this.state.models) && this.state.models.length)
-        }
+        disabled={this.state.isLoading}
       >
-        <option>Model</option>
-        {this.props.filters.brand ? this.listModels(this.state.models) : null}
+        {this.state.isLoading ? (
+          <option>Model</option>
+        ) : (
+          this.listModels(this.state.models)
+        )}
       </Combobox>
     );
   }

@@ -7,12 +7,19 @@ export default class Brand extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { brands: [] };
+    this.state = { brands: [], isLoading: true };
   }
 
   fetchBrands = async () => {
-    const response = await fipe.get('/carros/marcas');
-    this.setState({ brands: response.data });
+    await fipe
+      .get('/carros/marcas')
+      .then(response =>
+        this.setState({ brands: response.data, isLoading: false })
+      )
+      .catch(err => {
+        console.error('Fetching Brands: ', err);
+        this.setState({ brands: [], isLoading: true });
+      });
   };
 
   setBrand = event => {
@@ -37,9 +44,14 @@ export default class Brand extends React.Component {
 
   render() {
     return (
-      <Combobox id="brand" label="" onChangeFunc={this.setBrand}>
+      <Combobox
+        id="brand"
+        label=""
+        disabled={this.state.isLoading}
+        onChangeFunc={this.setBrand}
+      >
         <option value="">Brand</option>
-        {this.listOptions(this.state.brands)}
+        {this.state.isLoading ? null : this.listOptions(this.state.brands)}
       </Combobox>
     );
   }
