@@ -64,11 +64,8 @@ export default class Year extends React.Component {
         onChangeFunc={this.setYear}
         disabled={this.state.isLoading}
       >
-        {this.state.isLoading ? (
-          <option value="">Year</option>
-        ) : (
-          this.listYears(this.state.years)
-        )}
+        <option value="">Year</option>
+        {this.state.isLoading ? null : this.listYears(this.state.years)}
       </Combobox>
     );
   }

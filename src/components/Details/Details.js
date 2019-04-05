@@ -12,24 +12,31 @@ export default class Details extends React.Component {
 
     this.state = {
       vehicle: {},
+      isLoading: true,
     };
   }
 
   getVehicle = async () => {
+    this.setState({ vehicle: {}, isLoading: true });
     if (
       !Object.values(this.props.selectedVehicle).filter(v => v === null).length
     ) {
-      const response = await fipe.get(
-        '/carros/marcas/' +
-          this.props.selectedVehicle.brand +
-          '/modelos/' +
-          this.props.selectedVehicle.model +
-          '/anos/' +
-          this.props.selectedVehicle.year
-      );
-      this.setState({ vehicle: response.data });
+      await fipe
+        .get(
+          '/carros/marcas/' +
+            this.props.selectedVehicle.brand +
+            '/modelos/' +
+            this.props.selectedVehicle.model +
+            '/anos/' +
+            this.props.selectedVehicle.year
+        )
+        .then(response => this.setState({ vehicle: response.data }))
+        .catch(err => {
+          console.error('Fetching Vehicle', err);
+          this.setState({ vehicle: {}, isLoading: true });
+        });
     } else {
-      this.setState({ vehicle: {} });
+      this.setState({ vehicle: {}, isLoading: true });
     }
   };
 
@@ -76,7 +83,9 @@ export default class Details extends React.Component {
               </div>
             </div>
           </Card>
-        ) : null}
+        ) : (
+          <h4>Loading</h4>
+        )}
       </div>
     );
   }

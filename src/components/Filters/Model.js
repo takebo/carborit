@@ -57,11 +57,8 @@ export default class Model extends React.Component {
         onChangeFunc={this.setModel}
         disabled={this.state.isLoading}
       >
-        {this.state.isLoading ? (
-          <option>Model</option>
-        ) : (
-          this.listModels(this.state.models)
-        )}
+        <option>Model</option>
+        {this.state.isLoading ? null : this.listModels(this.state.models)}
       </Combobox>
     );
   }
