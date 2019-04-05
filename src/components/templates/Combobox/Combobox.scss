@@ -1,0 +1,21 @@
+select {
+  background: #fff;
+  color: #272222;
+  border: 1px solid #bebaba;
+  width: 100%;
+  border-radius: 5px;
+  height: 40px;
+  display: block;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  text-indent: 5px;
+  appearance: none;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,71 @@
+.header {
+  background: linear-gradient(
+    79.51deg,
+    #f14444 0%,
+    #f2b65d 48.96%,
+    #ef3556 100%
+  );
+
+  .container {
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 1440px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 40px;
+    align-items: center;
+  }
+
+  .logo-wrapper {
+    justify-self: start;
+
+    .logo {
+      /* Carborit */
+      font-style: normal;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 1em;
+      text-decoration: none;
+      color: #fcfbfb;
+      margin: 0;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .slogan {
+      /* A simple vehicle bookmarking app. */
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: normal;
+      color: #fed6b2;
+      margin: 0;
+    }
+  }
+
+  .header-navigation {
+    justify-self: end;
+    .myfavorites {
+      /* favorites-button */
+      display: block;
+      padding: 10px 25px;
+      border: 2px solid #f5eee7;
+      text-decoration: none;
+      box-sizing: border-box;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: normal;
+      outline: none;
+      color: #f5eee7;
+      transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+      &:hover {
+        background-color: rgba(252, 251, 251, 0.75);
+        color: #ef3556;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}

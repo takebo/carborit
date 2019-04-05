@@ -1,0 +1,59 @@
+%data-grid {
+  font-family: Poppins;
+  font-style: normal;
+  line-height: normal;
+  color: #272222;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-column-gap: 30px;
+  align-items: center;
+  transition: 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+%grid-cell {
+  p {
+    margin: 0;
+  }
+}
+
+.data-header {
+  font-weight: 500;
+  font-size: 18px;
+
+  @extend %data-grid;
+  .data-cell {
+    @extend %grid-cell;
+  }
+}
+
+.data-row {
+  font-weight: normal;
+  font-size: 14px;
+
+  @extend %data-grid;
+  .data-cell {
+    @extend %grid-cell;
+    &:last-child {
+      justify-self: end;
+    }
+  }
+}
+
+.card + .card {
+  margin-top: 20px;
+}
+
+.remove-favorites {
+  line-height: 24px;
+  background: #fcfbfb;
+  border: 1px solid #f5eee7;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #272222;
+  cursor: pointer;
+  transition: 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  &:hover {
+    color: #f14444;
+  }
+}

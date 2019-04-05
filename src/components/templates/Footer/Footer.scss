@@ -1,0 +1,18 @@
+footer {
+  background: #fcfbfb;
+  display: grid;
+  align-self: end;
+  height: 50px;
+
+  .copyright {
+    /* © 2019 Laborit. All rights reserved. */
+    align-self: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: normal;
+    text-align: center;
+
+    color: #c4c4c4;
+  }
+}

@@ -1,0 +1,50 @@
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 1fr 80px;
+}
+
+.content {
+}
+
+.main {
+  padding: 40px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-title {
+  padding: 40px;
+  min-height: 116px;
+  background: #fcfbfb;
+  display: grid;
+  h1 {
+    align-self: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: normal;
+    text-align: center;
+    color: #272222;
+    margin: 0;
+  }
+}
