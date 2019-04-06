@@ -47,10 +47,10 @@ npm start
 ### Build Release
 
 ```bash
-npm build
+npm run build
 ```
 
-After building, the application will be found in the project's `public` directory.
+After building, the application will be found in the project's `build` directory.
 
 ## Technology Stack
 
