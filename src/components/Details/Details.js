@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import fipe from '../../api/fipe';
 import ButtonFavorites from '../Favorites/ButtonFavorites';
 import Card from '../templates/Card/Card';
+import Placeholder from '../templates/Placeholder/Placeholder';
 import './Details.scss';
 import picture from '../../assets/img/car-picture-placeholder.svg';
+import vehiclePlaceholder from '../../assets/img/vehicle-placeholder.svg';
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -21,6 +23,7 @@ export default class Details extends React.Component {
     if (
       !Object.values(this.props.selectedVehicle).filter(v => v === null).length
     ) {
+      this.props.progressBar(true);
       await fipe
         .get(
           '/carros/marcas/' +
@@ -30,10 +33,14 @@ export default class Details extends React.Component {
             '/anos/' +
             this.props.selectedVehicle.year
         )
-        .then(response => this.setState({ vehicle: response.data }))
+        .then(response => {
+          this.setState({ vehicle: response.data });
+          this.props.progressBar(false);
+        })
         .catch(err => {
           console.error('Fetching Vehicle', err);
           this.setState({ vehicle: {}, isLoading: true });
+          this.props.progressBar(false);
         });
     } else {
       this.setState({ vehicle: {}, isLoading: true });
@@ -84,7 +91,10 @@ export default class Details extends React.Component {
             </div>
           </Card>
         ) : (
-          <h4>Loading</h4>
+          <Placeholder
+            placeholderImage={vehiclePlaceholder}
+            placeholderText="Select a Brand, the Model and the Year of a vehicle to see it's details."
+          />
         )}
       </div>
     );
@@ -93,4 +103,5 @@ export default class Details extends React.Component {
 
 Details.propTypes = {
   selectedVehicle: PropTypes.object.isRequired,
+  progressBar: PropTypes.func,
 };
