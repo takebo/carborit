@@ -1,0 +1,62 @@
+.progressbar {
+  background: #fcfbfb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+
+  &:before {
+    content: '';
+    background-color: #f14444;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    animation: 300ms start forwards;
+  }
+  &:after {
+    content: '';
+    background-color: #f14444;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    animation: 400ms progress forwards;
+    animation-delay: 200ms;
+  }
+  &.complete:after {
+    width: 30%;
+    animation: 200ms complete forwards;
+  }
+}
+
+@keyframes start {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 10%;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+@keyframes complete {
+  0% {
+    width: 30%;
+  }
+  100% {
+    width: 100%;
+  }
+}
