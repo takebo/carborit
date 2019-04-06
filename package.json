@@ -5,6 +5,7 @@
     "email": "takebo@gmail.com",
     "url": "https://www.linkedin.com/in/brunowakiyama/"
   },
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
