@@ -1,6 +1,6 @@
 # Carborit
 
-## A simple vehicle bookmarking app.
+### A simple vehicle bookmarking app.
 
 <img src="screenshot.png">
 
