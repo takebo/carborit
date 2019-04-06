@@ -1,10 +1,11 @@
 .details {
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 1fr;
 
   .picture {
     width: 100%;
     height: 100%;
+    padding: 2em;
     background: #fcfbfb;
     text-align: center;
     display: grid;
@@ -17,9 +18,9 @@
   }
 
   .info {
-    padding: 40px;
+    padding: 2em;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     p {
       margin: 0;
     }
@@ -28,7 +29,7 @@
       font-family: Poppins;
       font-style: normal;
       font-weight: 500;
-      font-size: 36px;
+      font-size: 24px;
       line-height: normal;
       color: #272222;
     }
@@ -44,9 +45,9 @@
 
     .data-table {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       align-items: center;
-      margin-top: 20px;
+      margin: 20px 0;
 
       .data-cell {
         background: #fcfbfb;
@@ -57,10 +58,14 @@
         span {
           font-style: normal;
           font-weight: normal;
-          font-size: 14px;
+          font-size: 16px;
           line-height: normal;
           text-transform: uppercase;
           color: #ef3556;
+          display: inline-block;
+          min-width: 50px;
+          margin-right: 10px;
+          border-right: 1px solid #f5eee7;
         }
 
         p {
@@ -69,6 +74,7 @@
           font-size: 18px;
           line-height: normal;
           color: #404040;
+          display: inline-block;
         }
       }
     }
@@ -92,7 +98,7 @@
     }
 
     .col:last-child {
-      text-align: right;
+      text-align: center;
     }
 
     .btn-favorite {
@@ -132,6 +138,43 @@
         i {
           color: #fcfbfb;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .details {
+    grid-template-columns: 25% 1fr;
+
+    .picture {
+      padding: 0;
+    }
+
+    .info {
+      grid-template-columns: 1fr 1fr;
+
+      .brand {
+        font-size: 36px;
+      }
+
+      .data-table {
+        grid-template-columns: repeat(3, 1fr);
+
+        .data-cell {
+          span {
+            font-size: 14px;
+            border-right: 0;
+          }
+
+          p {
+            display: block;
+          }
+        }
+      }
+
+      .col:last-child {
+        text-align: right;
       }
     }
   }

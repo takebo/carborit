@@ -19,14 +19,14 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 150px 1fr 80px;
+  grid-template-rows: auto 1fr 80px;
 }
 
 .content {
 }
 
 .main {
-  padding: 40px;
+  padding: 2em;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -41,10 +41,18 @@ body {
     align-self: center;
     font-style: normal;
     font-weight: 300;
-    font-size: 36px;
+    font-size: 24px;
     line-height: normal;
     text-align: center;
     color: #272222;
     margin: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .page-title {
+    h1 {
+      font-size: 36px;
+    }
   }
 }

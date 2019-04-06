@@ -2,11 +2,11 @@
   display: grid;
   max-width: 1440px;
   width: 100%;
-  padding: 20px 40px 0;
-  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px 0 0;
+  grid-template-columns: 1fr;
   justify-self: center;
   align-items: center;
-  grid-column-gap: 30px;
+  grid-gap: 2em;
 
   .formgroup {
     position: relative;
@@ -38,7 +38,7 @@
 
     select {
       transition: 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
-      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
       &:disabled {
         transform: scale(0.9);
         box-shadow: none;
@@ -46,6 +46,24 @@
       &:disabled + i {
         transform: scale(0) translateX(-80px);
       }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .filters {
+    display: grid;
+    max-width: 1440px;
+    width: 100%;
+    padding: 20px 40px 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    align-items: center;
+    grid-row-gap: 0;
+  }
+  .formgroup {
+    select {
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
     }
   }
 }

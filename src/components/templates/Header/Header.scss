@@ -1,4 +1,4 @@
-.header {
+header {
   background: linear-gradient(
     79.51deg,
     #f14444 0%,
@@ -8,12 +8,11 @@
 
   .container {
     margin: 0 auto;
-    padding: 40px;
+    padding: 2em;
     max-width: 1440px;
-    width: auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-column-gap: 40px;
+    grid-column-gap: 2em;
     align-items: center;
   }
 
@@ -24,7 +23,7 @@
       /* Carborit */
       font-style: normal;
       font-weight: 600;
-      font-size: 48px;
+      font-size: 36px;
       line-height: 1em;
       text-decoration: none;
       color: #fcfbfb;
@@ -34,12 +33,7 @@
 
     .slogan {
       /* A simple vehicle bookmarking app. */
-      font-style: normal;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: normal;
-      color: #fed6b2;
-      margin: 0;
+      display: none;
     }
   }
 
@@ -48,23 +42,65 @@
     .myfavorites {
       /* favorites-button */
       display: block;
-      padding: 10px 25px;
+      padding: 0 10px;
       border: 2px solid #f5eee7;
       text-decoration: none;
       box-sizing: border-box;
       border-radius: 5px;
       font-style: normal;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 24px;
       line-height: normal;
       outline: none;
       color: #f5eee7;
       transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 
+      i {
+        font-style: normal;
+      }
+
+      span {
+        display: none;
+      }
+
       &:hover {
         background-color: rgba(252, 251, 251, 0.75);
         color: #ef3556;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  header {
+    .logo-wrapper {
+      .logo {
+        /* Carborit */
+        font-size: 48px;
+      }
+      .slogan {
+        /* A simple vehicle bookmarking app. */
+        display: block;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: normal;
+        color: #fed6b2;
+        margin: 0;
+      }
+    }
+    .header-navigation {
+      .myfavorites {
+        /* favorites-button */
+        padding: 10px 25px;
+        font-size: 18px;
+        i {
+          display: none;
+        }
+        span {
+          display: inline;
+        }
       }
     }
   }
