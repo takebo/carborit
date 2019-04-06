@@ -12,9 +12,9 @@ Carborit is a simple vehicle bookmarking app that uses [Fipe API](http://deividf
 
 ## Browsers support
 
-| IE / Edge | Firefox     | Chrome     | Safari   | iOS Safari | Opera    |
-| --------- | ----------- | ---------- | -------- | ---------- | -------- |
-| Edge 12+  | Firefox 18+ | Chrome 49+ | untested | untested   | untested |
+| Edge | Firefox | Chrome |
+| ---- | ------- | ------ |
+| 16+  | 52+     | 57+    |
 
 ## Features
 
@@ -63,7 +63,7 @@ After building, the application will be found in the project's `public` director
 
 - [x] Filters (Brand, Model, Year)
 - [x] Favorites
-- [ ] Responsive Design
+- [x] Responsive Design
 - [ ] Unit Testing
 
 ## Credits and references
