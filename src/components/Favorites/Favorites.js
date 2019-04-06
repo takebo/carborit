@@ -1,7 +1,9 @@
 import React from 'react';
 import RemoveFavorites from './RemoveFavorites';
 import Card from '../templates/Card/Card';
+import Placeholder from '../templates/Placeholder/Placeholder';
 import './Favorites.scss';
+import favoritesPlaceholder from '../../assets/img/favorites-placeholder.svg';
 
 export default class Favorites extends React.Component {
   state = {
@@ -34,8 +36,6 @@ export default class Favorites extends React.Component {
           </Card>
         );
       });
-    } else {
-      return <div>oh bullocks</div>;
     }
   };
 
@@ -60,13 +60,18 @@ export default class Favorites extends React.Component {
             <h1>Favorites</h1>
           </div>
           <div className="main">
-            {this.state.favorites.length > 0 && (
+            {this.state.favorites.length > 0 ? (
               <div className="data-header">
                 <div className="data-cell">Brand</div>
                 <div className="data-cell">Model</div>
                 <div className="data-cell">Value</div>
                 <div className="data-cell" />
               </div>
+            ) : (
+              <Placeholder
+                placeholderImage={favoritesPlaceholder}
+                placeholderText="Your favorite list is empty."
+              />
             )}
             {this.listFavorites()}
           </div>
