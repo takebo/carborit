@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../templates/Header/Header';
-import Footer from '../templates/Footer/Footer';
 import RemoveFavorites from './RemoveFavorites';
 import Card from '../templates/Card/Card';
 import './Favorites.scss';
@@ -57,7 +55,6 @@ export default class Favorites extends React.Component {
   render() {
     return (
       <>
-        <Header />
         <div className="content">
           <div className="page-title">
             <h1>Favorites</h1>
@@ -74,7 +71,6 @@ export default class Favorites extends React.Component {
             {this.listFavorites()}
           </div>
         </div>
-        <Footer />
       </>
     );
   }
