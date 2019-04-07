@@ -12,9 +12,9 @@ Carborit is a simple vehicle bookmarking app that uses [Fipe API](http://deividf
 
 ## Browsers support
 
-| Edge | Firefox | Chrome |
-| ---- | ------- | ------ |
-| 16+  | 52+     | 57+    |
+| ![](https://www.w3schools.com/images/compatible_chrome.gif)<br>Chrome | ![](https://www.w3schools.com/images/compatible_firefox.gif)<br>Firefox | ![](https://www.w3schools.com/images/compatible_edge.gif)<br>Edge |
+| :-------------------------------------------------------------------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------: |
+|                                  57+                                  |                                   52+                                   |                                16+                                |
 
 ## Features
 
@@ -44,6 +44,12 @@ npm install
 npm start
 ```
 
+### Testing
+
+```bash
+npm test
+```
+
 ### Build Release
 
 ```bash
@@ -69,3 +75,7 @@ After building, the application will be found in the project's `build` directory
 ## Credits and references
 
 - The vector placeholder for empty vehicle and empty favorites is provided by [unDraw](https://undraw.co/), created by [Katerina Limpitsouni](https://twitter.com/ninalimpi).
+
+## License
+
+{project_name} is [MIT](LICENSE) licensed.
