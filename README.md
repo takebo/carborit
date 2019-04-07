@@ -2,7 +2,7 @@
 
 ### A simple vehicle bookmarking app.
 
-<img src="screenshot.png">
+<a href="https://carborit.netlify.com/" target="_blank"><img src="screenshot.png"></a>
 
 ![](https://flat.badgen.net/github/status/takebo/carborit)
 ![](https://flat.badgen.net/github/last-commit/takebo/carborit)
