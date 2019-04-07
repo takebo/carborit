@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render 1`] = `
+<BrowserRouter>
+  <Header />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Favorites
+      component={[Function]}
+      exact={true}
+      path="/favorites"
+    />
+  </Switch>
+  <Footer />
+</BrowserRouter>
+`;

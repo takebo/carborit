@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveFavorites should render 1`] = `
+<button
+  className="remove-favorites"
+  onClick={[Function]}
+  value="model+year"
+>
+  remove
+</button>
+`;

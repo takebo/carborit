@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar should add class complete 1`] = `
+<div
+  className="progressbar complete"
+/>
+`;
+
+exports[`ProgressBar should render 1`] = `
+<div
+  className="progressbar"
+/>
+`;
