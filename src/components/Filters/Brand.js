@@ -17,7 +17,6 @@ export default class Brand extends React.Component {
         this.setState({ brands: response.data, isLoading: false })
       )
       .catch(err => {
-        console.error('Fetching Brands: ', err);
         this.setState({ brands: [], isLoading: true });
       });
   };

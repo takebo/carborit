@@ -38,7 +38,6 @@ export default class Details extends React.Component {
           this.props.progressBar(false);
         })
         .catch(err => {
-          console.error('Fetching Vehicle', err);
           this.setState({ vehicle: {}, isLoading: true });
           this.props.progressBar(false);
         });

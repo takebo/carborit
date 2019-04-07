@@ -45,7 +45,6 @@ export default class Favorites extends React.Component {
     );
     this.setState({ favorites: newData });
     localStorage.setItem('favorites', JSON.stringify(newData));
-    console.log('newData: ', this.state.favorites);
   };
 
   componentDidMount() {

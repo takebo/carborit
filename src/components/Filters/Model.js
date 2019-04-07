@@ -19,7 +19,6 @@ export default class Model extends React.Component {
           this.setState({ models: response.data.modelos, isLoading: false })
         )
         .catch(err => {
-          console.error('Fetching Models: ', err);
           this.setState({ models: [], isLoading: true });
         });
     } else {

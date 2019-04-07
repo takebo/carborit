@@ -25,7 +25,6 @@ export default class Year extends React.Component {
           this.setState({ years: response.data, isLoading: false });
         })
         .catch(err => {
-          console.error('Fetching Years: ', err);
           this.setState({ years: [], isLoading: true });
         });
     } else {
@@ -53,7 +52,6 @@ export default class Year extends React.Component {
     if (this.props.filters.model !== prevProps.filters.model) {
       this.fetchYears();
     }
-    console.log('Year.js did update. isLoading = ', this.state.isLoading);
   }
 
   render() {
