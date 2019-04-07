@@ -83,4 +83,4 @@ After building, the application will be found in the project's `build` directory
 
 ## License
 
-Carborit is [MIT](LICENSE) licensed.
+[Carborit](https://carborit.netlify.com) is [MIT](LICENSE) licensed.
