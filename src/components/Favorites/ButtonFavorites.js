@@ -45,10 +45,6 @@ export default class ButtonFavorites extends React.Component {
     localStorage.setItem('favorites', JSON.stringify(newData));
   };
 
-  clearFavorites = () => {
-    localStorage.clear();
-  };
-
   isFavorited = () => {
     if (localStorage.getItem('favorites')) {
       JSON.parse(localStorage.getItem('favorites')).filter(
