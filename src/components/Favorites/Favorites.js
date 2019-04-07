@@ -49,7 +49,11 @@ export default class Favorites extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({ favorites: JSON.parse(localStorage.getItem('favorites')) });
+    localStorage.getItem('favorites')
+      ? this.setState({
+          favorites: JSON.parse(localStorage.getItem('favorites')),
+        })
+      : localStorage.setItem('favorites', '[]');
   }
 
   render() {
