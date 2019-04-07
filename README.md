@@ -83,4 +83,4 @@ After building, the application will be found in the project's `build` directory
 
 ## License
 
-{project_name} is [MIT](LICENSE) licensed.
+Carborit is [MIT](LICENSE) licensed.
