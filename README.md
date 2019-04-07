@@ -23,6 +23,11 @@ A few things that you can do with Carborit:
 - Filter vehicles by its brand, model and year
 - Add, remove and list your favorited vehicles
 
+## Design & Prototype
+
+- [Design](https://www.figma.com/file/C1ZPduMNxvqlf0xs9jKfbYEW/Carborit?node-id=0%3A1)
+- [Prototype](https://www.figma.com/proto/C1ZPduMNxvqlf0xs9jKfbYEW/Carborit?node-id=0%3A1&viewport=792%2C385%2C0.318906&scaling=min-zoom)
+
 ## Development
 
 ### Clone Code
