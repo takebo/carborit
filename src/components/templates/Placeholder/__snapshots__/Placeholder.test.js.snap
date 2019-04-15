@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PLaceholder should render 1`] = `
+<div
+  className="page-placeholder"
+  style=""
+>
+  <p />
+</div>
+`;
